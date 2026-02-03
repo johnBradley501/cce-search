@@ -7,7 +7,8 @@ access for the data was no longer available.  To replace this, a set of pages we
 from the original MySQL database, and then drew on this JSON data via JavaScript code.
 
 All the code for this is contained here in this repo.
-* The directory "src" contains Python code that creates the JSON data by running SQL queries against the database and turning it into JSON
+* The directory "src" contains Python code that creates the JSON data by running SQL queries against the database and turning it into JSON. See more
+about this [here](doc/srcOverfiew.md).
 * The directory "site" contains the search folder which contains the web pages that implement the service: HTML and JavaScript files.
 
 -- John Bradley (john.bradley@kcl.ac.uk) (February 2026)
