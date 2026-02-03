@@ -1,0 +1,101 @@
+https://stackoverflow.com/questions/747641/what-is-the-difference-between-decodeuricomponent-and-decodeuri
+
+{"basic_surname":"Bradley","basic_forename":"","basic_dioceseKey":"1","basic_locationKey":"1","basic_startYear":"0","basic_endYear":"9999"}
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import
+
+https://javascript.info/modules-dynamic-imports
+
+-----------------------------------------------------
+
+eventKey: has values
+* office: no values 
+ordinary: no values (set according to Jurisdiction Diocese setting)
+* Clerical status: no values: fixed list? (has partial ordering info)
+* Patronage type: no values:
+* Patronage gender: no values (non-numeric key)
+
+====================================================
+Script runAll starts...
+
+
+Creating Persons Data...
+   Count: 158263
+   writing file: persons.js
+   writing file: personOrder.js
+...Done!
+
+Creating Location Lists...
+   Count: 22249
+   writing file: location1.js
+...Done!
+Creating Location-Persons Data...
+Processing starts
+   Count: 497800
+   writing file: location2.js
+...Done!
+
+Creating County to Persons Data...
+Processing starts
+   Count: 155317
+   writing file: countyPers.js
+...Done!
+Creating Archdeaconry Lists...
+   Count: 571
+   writing file: archDData.js
+...Done!
+
+Creating Archdeaconry to Persons Data...
+Processing starts
+   Count: 497452
+   writing file: archDPers.js
+...Done!
+Creating Region List Data...
+   Count: 141
+   writing file: regData.js
+...Done!
+Creating Region to Persons Data...
+Processing starts
+   Count: 497121
+   writing file: regPers.js
+...Done!
+Creating Diocese Person Data...
+   Count: 1739
+   writing file: DiocOrds.js
+...Done!
+Creating Events to Persons data...
+Processing CMAppEvent
+   Count:  239525
+Processing CMBirthEvent
+   Count:  6428
+Processing CMDeathEvent
+   Count:  34756
+Processing CMOrdEvent
+   Count:  125949
+Processing CMSubEvent
+   Count:  3714
+...Done!
+Creating Appointment event Data...
+...Building Patron name data
+   Count: 196933
+...Main processing begins...
+   Count: 215293
+   writing file: appEventData.js
+...Done!
+Creating Ordination event Data...
+Processing begins...
+   Count: 110320
+   writing file: ordEventData.js
+...Done!
+Creating Fixed List Data...
+Doing Office Types
+   Count: 262
+Doing Clerical Status
+   Count:  19
+Doing PatronageTypes
+   Count: 11
+Doing Patronage Genders
+   Count: 3
+   file completed: fixedLists.js
+...Done!
+All done!!!

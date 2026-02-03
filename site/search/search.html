@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CCED: Search Results</title>
+
+    <link rel="stylesheet" type="text/css" href="../Assets/p/c/global.css"/>
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="../Assets/p/c/msie_7.css"/><![endif]-->    
+    <script src="../Assets/p/s/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="../Assets/p/s/config.global.js" type="text/javascript"></script>
+    
+    <script type="text/javascript" src="data/persons.js"></script>
+    <script type="text/javascript" src="data/personOrder.js"></script>
+    <script type="text/javascript" src="data/location2.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+</head>
+<body id="t1">
+<div class="ph">
+    <h1>Search Results</h1>
+    <div id="cnt"></div>
+</div>
+<div class="ct" id="rslt"><p>working...</p></div>
+<script>
+theData = window.location.search;
+if(theData) {
+	theData2 = JSON.parse(decodeURIComponent(theData.substring(1)));
+	displaySearch(doSearch(theData2));
+} else {
+	displayMessage("If your search matches career model records in the database, they are listed here. Clicking the Person name will display the full record on the right.");
+}
+</script>
+</body>
+</html>

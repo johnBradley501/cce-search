@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CCED: Search</title>
+
+    <link rel="stylesheet" type="text/css" href="../Assets/p/c/global.css"/>
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="../Assets/p/c/msie_7.css"/><![endif]-->
+    <script type="text/javascript" src="../Assets/p/s/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.ui.core.custom.min.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.hoverintent.min.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.overlabel.min.js"></script>    
+    <script type="text/javascript" src="../Assets/p/s/jq.cluetip.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.jqmodal.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/config.global.js"></script>
+    <!-- script type="text/javascript" src="../Assets/p/s/config.t0.js"></script -->
+    
+    <script type="text/javascript" src="data/persons.js"></script>
+    <script type="text/javascript" src="data/location1.js"></script>
+    <script type="text/javascript" src="data/fixedLists.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="advsearch.js"></script>
+    
+</head>
+
+<body id="t0">
+
+<div id="ns">
+  <ul class="gn">
+    <li class="i1">
+        <a href="/" target="_top">Home</a>
+    </li>
+    <li>
+        <a class="s3" href="">Database</a>
+    </li>
+    <li>
+        <a href="/reference/" target="_top">Reference</a>
+    </li>
+    <li>
+        <a href="/journal/" target="_top">Journal</a>
+    </li>
+    <li>
+        <a href="/about/" target="_top">About</a>
+    </li>
+    <li>
+        <a href="/category/newsblog" target="_top">Blog</a>
+    </li>
+    <li>
+        <a href="/contact/" target="_top">Contact</a>
+    </li>
+    <li class="ix">
+        <a href="/how-to-use-the-database/" target="_top">How to use the database</a>
+    </li>
+  </ul>
+</div>
+<div id="bs">
+<div class="g">
+<div class="u ux">
+    <h1 title="CCEd">CCEd</h1>
+
+    <h2 title="Clergy of the Church of England Database">Clergy of the Church of England Database</h2>
+
+    <div class="gx" title="[Image: the CCED 'Flying Preacher' device]">[Image: the CCED 'Flying Preacher'
+        device]
+    </div>
+</div>
+<div class="m">
+<div class="w">
+<div class="u u1">
+    <ul class="ln">
+                        <li class="i1"><a href="../search/index.html" class="s3" target="_top">Search</a></li>
+                        <li><a href="../persons/index.html" target="_top">Browse Persons</a></li>
+                        <li><a href="../locations/index.html" target="_top">Browse Locations</a></li>
+                        <li class="ix"><a href="../bishops/index.html" target="_top">Browse Bishops</a></li>
+    </ul>
+</div>
+<div class="u u2">
+<div class="tn">
+    <ul>
+        <li><a class="g4" href="#" onclick="top.open('index.html')">Basic Search</a></li>
+        <!-- li class="g4"><a href="#BASIC">Basic Search</a></li -->
+        <li><a>Advanced Search</a></li>
+    </ul>
+</div>
+<form name="basic_search" id="basic_search">
+<div id="ADVANCED">
+<ol>
+<li>
+    <h3 id="ADVANCE_STAGE1"><a>Search Criteria</a></h3>
+    <fieldset id="stage1">
+        <legend>Advanced Search</legend>
+        <ol>
+            <li class="i2">
+                <fieldset class="fs2">
+                    <label for="stage1_surname" id="stage1_surname_label" class="i1">Surname:</label>
+                    <input type="text" name="stage1_surname" id="stage1_surname" value="" />
+                    <label for="stage1_surname" id="stage1_forename_label" class="i2">Forename:</label>
+                    <input type="text" name="stage1_forename" id="stage1_forename" value="" />
+                </fieldset>
+            </li>
+            <li class="i3">
+                <label for="stage1_locFreeText" id="stage1_locFreeText_label">Location:</label>
+                <input type="text" name="stage1_locFreeText" id="stage1_locFreeText" value="">
+            </li>
+            <li class="i4">
+                <fieldset class="fs3">
+                    <label for="stage1_jurisDioceseKey" id="stage1_juriDiocese_label" class="i1">Jurisdiction
+                        Diocese:</label>
+                    <select name="stage1_jurisDioceseKey" id="stage1_jurisDioceseKey"><option value="">-</option><option value="3">Canterbury</option><option value="4">Bath &amp; Wells</option><option value="5">Bristol</option><option value="6">Chichester</option><option value="7">Ely</option><option value="8">Exeter</option><option value="9">Gloucester</option><option value="10">Hereford</option><option value="12">Coventry &amp; Lichfield</option><option value="13">Lincoln</option><option value="14">London</option><option value="15">Norwich</option><option value="16">Oxford</option><option value="17">Peterborough</option><option value="18">Rochester</option><option value="19">Salisbury</option><option value="20">Westminster</option><option value="21">Winchester</option><option value="22">Worcester</option><option value="23">Bangor</option><option value="24">Llandaff</option><option value="25">St. Asaph</option><option value="26">St. Davids</option><option value="27">Carlisle</option><option value="28">Chester</option><option value="29">Durham</option><option value="30">Sodor and Man</option><option value="31">York</option><option value="126">Royal peculiars, exempt jurisdictions</option><option value="73">West Indies</option><option value="146">North America</option><option value="148">Asia</option><option value="149">Australasia</option><option value="150">Middle East</option><option value="151">Africa</option><option value="152">Europe</option><option value="153">Nova Scotia</option><option value="154">Quebec</option><option value="155">Calcutta</option><option value="156">Barbados</option><option value="157">Jamaica</option><option value="158">Madras</option><option value="159">South America</option></select>
+                    <label for="stage1_jurisArchdeaconryKey" id="stage1_jurisArchdeaconryKey_label" class="i2">Jurisdiction
+                        Archdeaconry:</label>
+                    <select name="stage1_jurisArchdeaconryKey" id="stage1_jurisArchdeaconryKey" disabled="disabled"><option value="">-</option></select>
+                    <script>
+             	       document.addEventListener(
+                           'DOMContentLoaded', () => {
+                           	document.getElementById("stage1_jurisDioceseKey").
+                           	addEventListener("change", (event) => {
+                           		defineArchdeaconSelection("stage1_jurisArchdeaconryKey", event.target.value);
+                           		handleJurisGeogDioceseDisabling();
+                           		evele = document.getElementById("stage1_eventKey");
+                           		setupEventOptions(evele.value);
+                             });
+                     })
+                    </script>
+                </fieldset>
+            </li>
+            <li class="i5">
+                <fieldset class="fs3">
+                    <label for="stage1_geogDioceseKey" id="stage1_geogDioceseKey_label" class="i1">Geographic Diocese:</label>
+                    <select name="stage1_geogDioceseKey" id="stage1_geogDioceseKey" class="needsPostback" ><option value="">-</option><option value="3">Canterbury</option><option value="4">Bath &amp; Wells</option><option value="5">Bristol</option><option value="6">Chichester</option><option value="7">Ely</option><option value="8">Exeter</option><option value="9">Gloucester</option><option value="10">Hereford</option><option value="12">Coventry &amp; Lichfield</option><option value="13">Lincoln</option><option value="14">London</option><option value="15">Norwich</option><option value="16">Oxford</option><option value="17">Peterborough</option><option value="18">Rochester</option><option value="19">Salisbury</option><option value="20">Westminster</option><option value="21">Winchester</option><option value="22">Worcester</option><option value="23">Bangor</option><option value="24">Llandaff</option><option value="25">St. Asaph</option><option value="26">St. Davids</option><option value="27">Carlisle</option><option value="28">Chester</option><option value="29">Durham</option><option value="30">Sodor and Man</option><option value="31">York</option><option value="124">Domestic chaplains</option><option value="125">Universities</option><option value="126">Royal peculiars, exempt jurisdictions</option><option value="127">Cathedrals</option><option value="128">Diocesan Officers</option><option value="129">Collegiate Churches</option><option value="73">West Indies</option><option value="146">North America</option><option value="148">Asia</option><option value="149">Australasia</option><option value="150">Middle East</option><option value="151">Africa</option><option value="152">Europe</option><option value="153">Nova Scotia</option><option value="154">Quebec</option><option value="155">Calcutta</option><option value="156">Barbados</option><option value="157">Jamaica</option><option value="158">Madras</option><option value="159">South America</option></select>
+                    <label for="stage1_cceRegionKey" id="stage1_cceRegionKey_label">CCE Region:</label>
+                    <select name="stage1_cceRegionKey" id="stage1_cceRegionKey" disabled="disabled"><option value="">-</option></select>
+                    <script>
+             	       document.addEventListener(
+                           'DOMContentLoaded', () => {
+                           	document.getElementById("stage1_geogDioceseKey").
+                           	addEventListener("change", (event) => {
+                           		defineRegionSelection("stage1_cceRegionKey", event.target.value);
+                             });
+                     })
+                    </script>
+                </fieldset>
+            </li>
+            <li class="i6">
+                <label for="stage1_countyKey" id="stage1_countyKey_label">County:</label>
+                <select name="stage1_countyKey" id="stage1_countyKey"><option value="">-</option><option value="2">(Other)</option><option value="11">(Unspecified)</option><option value="78">Ainsty of York</option><option value="84">Alderney</option><option value="30">America</option><option value="89">Anglesey</option><option value="48">Bedfordshire</option><option value="20">Berkshire</option><option value="98">Brecon</option><option value="21">Buckinghamshire</option><option value="88">Caernarvon</option><option value="7">Cambridgeshire</option><option value="97">Cardiganshire</option><option value="96">Carmarthenshire</option><option value="42">Cheshire</option><option value="57">City</option><option value="64">Cornwall</option><option value="8">Cumberland</option><option value="52">Denbighshire</option><option value="34">Derbyshire</option><option value="47">Devon</option><option value="26">Dorset</option><option value="63">Durham</option><option value="77">East Riding, Yorkshire</option><option value="56">Essex</option><option value="51">Flintshire</option><option value="95">Glamorgan</option><option value="18">Gloucestershire</option><option value="85">Guernsey</option><option value="25">Hampshire</option><option value="40">Herefordshire</option><option value="49">Hertfordshire</option><option value="14">Huntingdonshire</option><option value="31">Ireland</option><option value="15">Isle of Man</option><option value="86">Jersey</option><option value="3">Kent</option><option value="10">Lancashire</option><option value="35">Leicestershire</option><option value="50">Lincolnshire</option><option value="91">Merioneth</option><option value="58">Middlesex</option><option value="93">Monmouthshire</option><option value="39">Montgomery</option><option value="13">Norfolk</option><option value="79">North Riding, Yorkshire</option><option value="17">Northamptonshire</option><option value="65">Northumberland</option><option value="67">Nottinghamshire</option><option value="16">Oxfordshire</option><option value="99">Pembrokeshire</option><option value="94">Radnorshire</option><option value="55">Rutland</option><option value="87">Sark</option><option value="32">Scotland</option><option value="38">Shropshire</option><option value="24">Somerset</option><option value="36">Staffordshire</option><option value="6">Suffolk</option><option value="4">Surrey</option><option value="5">Sussex</option><option value="19">Warwickshire</option><option value="33">West Indies</option><option value="75">West Riding, Yorkshire</option><option value="9">Westmorland</option><option value="23">Wiltshire</option><option value="37">Worcestershire</option><option value="83">York</option></select>
+            </li>
+            <li class="i7">
+                <fieldset class="fs2">
+                    <label for="stage1_eventKey" id="stage1_eventKey_label">Event:</label>
+                    <select name="stage1_eventKey" id="stage1_eventKey"><option value="">-</option><option value="2">Birth</option><option value="7">Subscription</option><option value="3">Appointment</option><option value="4">Ordination</option><option value="5">Death</option></select>
+                    <script>
+             	       document.addEventListener(
+                           'DOMContentLoaded', () => {
+                           	document.getElementById("stage1_eventKey").
+                           	addEventListener("change", (event) => {
+                           		setupEventOptions(event.target.value);
+                             });
+                     })
+                    </script>
+                    <label for="stage1_officeKey" id="stage1_officeKey_label">Office:</label>
+                    <select name="stage1_officeKey" id="stage1_officeKey" disabled="disabled"><option value="">-</option></select>
+                </fieldset>
+            </li>
+            <li class="i8">
+                <fieldset class="fs2">
+                    <label for="stage1_ordinaryKey" id="stage1_ordinaryKey_label">Ordinary:</label>
+                    <select name="stage1_ordinaryKey" id="stage1_ordinaryKey" disabled="disabled"><option value="">-</option></select>
+                    <label for="stage1_clerStatusKey" id="stage1_clerStatusKey_label">Clerical Status:</label>
+                    <select name="stage1_clerStatusKey" id="stage1_clerStatusKey" disabled="disabled"><option value="">-</option></select>
+                </fieldset>
+            </li>
+            <li class="i9">
+                <fieldset>
+                    <label for="stage1_patronTypeKey" id="stage1_patronTypeKey_label" class="i1">Patronage type:</label>
+                    <select name="stage1_patronTypeKey" id="stage1_patronTypeKey" disabled="disabled"><option value="">-</option></select>
+                    <label for="stage1_patronGenderKey" id="stage1_patronGenderKey_label" class="i2">Patronage
+                        Gender:</label>
+                    <select name="stage1_patronGenderKey" id="stage1_patronGenderKey" disabled="disabled"><option value="">-</option></select>
+                    <label for="stage1_patronName" id="stage1_patronName_label" class="i3">Name:</label>
+                    <input type="text" name="stage1_patronName" id="stage1_patronName" value="" disabled="disabled">
+                </fieldset>
+            </li>
+            <li class="ix">
+                <label for="stage1_dateRange" id="stage1_dateRange_label">Date Range:</label>
+                <fieldset class="fs2" id="stage1_dateRange">
+                 <label for="stage1_startYear">From</label>
+                 <select name="stage1_startYear" id="stage1_startYear"><option value="">-</option><option value="1540">1540</option><option value="1560">1560</option><option value="1580">1580</option><option value="1600">1600</option><option value="1620">1620</option><option value="1640">1640</option><option value="1660">1660</option><option value="1680">1680</option><option value="1700">1700</option><option value="1720">1720</option><option value="1740">1740</option><option value="1760">1760</option><option value="1780">1780</option><option value="1800">1800</option><option value="1820">1820</option><option value="1840">1840</option></select>
+                 <label for="stage1_startYear">To</label>
+                 <select name="stage1_endYear" id="stage1_endYear"><option value="">-</option></select>
+                 <label> (Based on Career Span)</label>
+                 <script>
+                      document.addEventListener(
+                          'DOMContentLoaded', () => {
+                               document.getElementById("stage1_startYear").
+                               addEventListener("change", (event) => {
+                                   defineEndYearSelection("stage1_endYear", event.target.value);
+                               });
+                      })
+                </script>
+                </fieldset>
+            </li>
+        </ol>
+    </fieldset>
+</li>
+<li class="ix">
+    <ol>
+        <li class="i4">
+             <button name="basic_reset" type="button" onclick="ResetAdvancedForm('basic_search')">Reset</button>
+        </li>
+        <li class="ix">
+            <button name="basic_submit" name="basic_submit" type="button" onclick="handleAdvancedSearchQuery('basic_search')">Search</button>
+        </li>
+    </ol>
+</li>
+</ol>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</html>

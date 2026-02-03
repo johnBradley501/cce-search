@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CCED: Search</title>
+
+    <link rel="stylesheet" type="text/css" href="../Assets/p/c/global.css"/>
+    <!--[if IE 7]><link rel="stylesheet" type="text/css" href="../Assets/p/c/msie_7.css"/><![endif]-->
+    <script type="text/javascript" src="../Assets/p/s/jquery-1.2.6.min.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.ui.core.custom.min.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.hoverintent.min.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.overlabel.min.js"></script>    
+    <script type="text/javascript" src="../Assets/p/s/jq.cluetip.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/jq.jqmodal.js"></script>
+    <script type="text/javascript" src="../Assets/p/s/config.global.js"></script>
+    <!-- script type="text/javascript" src="../Assets/p/s/config.t0.js"></script -->
+    
+    <script type="text/javascript" src="data/persons.js"></script>
+    <script type="text/javascript" src="data/location1.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+    
+</head>
+
+<body id="t0">
+
+<div id="ns">
+  <ul class="gn">
+    <li class="i1">
+        <a href="/" target="_top">Home</a>
+    </li>
+    <li>
+        <a class="s3" href="">Database</a>
+    </li>
+    <li>
+        <a href="/reference/" target="_top">Reference</a>
+    </li>
+    <li>
+        <a href="/journal/" target="_top">Journal</a>
+    </li>
+    <li>
+        <a href="/about/" target="_top">About</a>
+    </li>
+    <li>
+        <a href="/category/newsblog" target="_top">Blog</a>
+    </li>
+    <li>
+        <a href="/contact/" target="_top">Contact</a>
+    </li>
+    <li class="ix">
+        <a href="/how-to-use-the-database/" target="_top">How to use the database</a>
+    </li>
+  </ul>
+</div>
+<div id="bs">
+<div class="g">
+<div class="u ux">
+    <h1 title="CCEd">CCEd</h1>
+
+    <h2 title="Clergy of the Church of England Database">Clergy of the Church of England Database</h2>
+
+    <div class="gx" title="[Image: the CCED 'Flying Preacher' device]">[Image: the CCED 'Flying Preacher'
+        device]
+    </div>
+</div>
+<div class="m">
+<div class="w">
+<div class="u u1">
+    <ul class="ln">
+                        <li class="i1"><a href="../search/index.html" class="s3" target="_top">Search</a></li>
+                        <li><a href="../persons/index.html" target="_top">Browse Persons</a></li>
+                        <li><a href="../locations/index.html" target="_top">Browse Locations</a></li>
+                        <li class="ix"><a href="../bishops/index.html" target="_top">Browse Bishops</a></li>
+    </ul>
+</div>
+<div class="u u2">
+<div class="tn">
+    <ul>
+        <!--  li class="g4"><a href="#BASIC">Basic Search</a></li -->
+        <li class="g4"><a>Basic Search</a></li>
+        <!-- li><a href="#ADVANCED">Advanced Search</a></li -->
+        <!-- li><a href="#" onclick="window.alert('The advanced Search is no longer available.'); return false;">Advanced Search</a></li -->
+        <li><a href="#" onclick="top.open('advanced.html')">Advanced Search</a></li>
+    </ul>
+</div>
+<form name="basic_search" id="basic_search">
+<div id="BASIC">
+    <fieldset>
+        <legend>Basic Search</legend>
+        <ol>
+            <li class="i1">
+                <fieldset class="i1">
+                    <legend>Search by Person ID</legend>
+                    <h3>Retrieve Record:</h3>
+                    <label for="PersonID" id="PersonID_label">Person ID</label>
+                    <input type="text" name="PersonID" id="PersonID"/>
+                    <button name="SearchByIDSubmit1" id="SearchByIDSubmit1" type="button" onclick="return processIdDisplay('PersonID')">Go</button> 
+                </fieldset>
+           </li>
+            <li>
+                <fieldset>
+                    <legend>Basic Search</legend>
+                    <ol>
+                        <li>
+                            <fieldset class="fs2">
+                                <label for="basic_surname" id="basic_surname_label" class="i1">Surname:</label>
+                                <input type="text" name="basic_surname" id="basic_surname" value="" />
+                                <label for="basic_forename" id="basic_forename_label" class="i2">Forename:</label>
+                                <input type="text" name="basic_forename" id="basic_forename" value="" />
+                            </fieldset>
+                        </li>
+                        <li>
+                            <label for="basic_dioceseKey" id="basic_dioceseKey_label">Diocese:</label>
+                            <select name="basic_dioceseKey" id="basic_dioceseKey"><option value="">-</option><option value="3">Canterbury</option><option value="4">Bath &amp; Wells</option><option value="5">Bristol</option><option value="6">Chichester</option><option value="7">Ely</option><option value="8">Exeter</option><option value="9">Gloucester</option><option value="10">Hereford</option><option value="12">Coventry &amp; Lichfield</option><option value="13">Lincoln</option><option value="14">London</option><option value="15">Norwich</option><option value="16">Oxford</option><option value="17">Peterborough</option><option value="18">Rochester</option><option value="19">Salisbury</option><option value="20">Westminster</option><option value="21">Winchester</option><option value="22">Worcester</option><option value="23">Bangor</option><option value="24">Llandaff</option><option value="25">St. Asaph</option><option value="26">St. Davids</option><option value="27">Carlisle</option><option value="28">Chester</option><option value="29">Durham</option><option value="30">Sodor and Man</option><option value="31">York</option><option value="126">Royal peculiars, exempt jurisdictions</option><option value="73">West Indies</option><option value="146">North America</option><option value="148">Asia</option><option value="149">Australasia</option><option value="150">Middle East</option><option value="151">Africa</option><option value="152">Europe</option><option value="153">Nova Scotia</option><option value="154">Quebec</option><option value="155">Calcutta</option><option value="156">Barbados</option><option value="157">Jamaica</option><option value="158">Madras</option><option value="159">South America</option></select>
+                        </li>
+                                <script>
+                            	   document.addEventListener(
+                                        'DOMContentLoaded', () => {
+                                        	document.getElementById("basic_dioceseKey").
+                                        	addEventListener("change", (event) => {
+                                         	   defineLocationSelection("basic_locationKey", event.target.value);
+                                          });
+                                  })
+                                 </script>
+                        <li>
+                            <label for="basic_locationKey" id="basic_locationKey_label">Location:</label>
+                            <select name="basic_locationKey" id="basic_locationKey"><option value="">-</option></select>
+                        </li>
+                        <li>
+                            <label for="basic_dateRange" id="basic_dateRange_label">Date Range:</label>
+                            <fieldset id="basic_dateRange" class="fs1">
+                                <label for="basic_startYear">From</label>
+                                <select name="basic_startYear" id="basic_startYear"><option value="">-</option><option value="1540">1540</option><option value="1560">1560</option><option value="1580">1580</option><option value="1600">1600</option><option value="1620">1620</option><option value="1640">1640</option><option value="1660">1660</option><option value="1680">1680</option><option value="1700">1700</option><option value="1720">1720</option><option value="1740">1740</option><option value="1760">1760</option><option value="1780">1780</option><option value="1800">1800</option><option value="1820">1820</option><option value="1840">1840</option></select>
+                                <label for="basic_endYear">To</label>
+                                <select name="basic_endYear" id="basic_endYear"><option value="">-</option></select>
+                                <script>
+                            	   document.addEventListener(
+                                        'DOMContentLoaded', () => {
+                                        	document.getElementById("basic_startYear").
+                                        	addEventListener("change", (event) => {
+                                         	   defineEndYearSelection("basic_endYear", event.target.value);
+                                          });
+                                  })
+                                 </script>
+                            </fieldset>
+                        </li>
+                        <li class="ix">
+                            <ol>
+                                <li class="i1">
+                                     <button name="basic_reset" type="button" onclick="ResetBasicForm('basic_search')">Reset</button>
+                                </li>
+                                <li class="ix">
+                                    <button id="basic_submit" name="basic_submit" type="button" onclick="handleSearchQuery('basic_search')">Search</button>
+                                 </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </fieldset>
+            </li>
+        </ol>
+    </fieldset>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!--   -->div class="jqmWindow" id='loadSearchForm'>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <div class="body">
+            <a href="#" class="jqmClose">Close</a>
+        <h2>Load CCEd Search</h2>
+
+        <p>Please upload your saved search file.</p>
+        <input name="uploadfile" type="file" />
+        <input name="todo" value="upload" type="hidden" />
+        <input name="submit" type="submit" value="Upload" />
+            </div>
+    </form>
+</div -->
+</html>

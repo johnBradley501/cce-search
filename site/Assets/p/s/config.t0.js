@@ -1,0 +1,240 @@
+$(document).ready(function() {
+    $("#t0 fieldset.i1 label").overlabel({label_class: 'x1', wrapper_class: 's2', hide_css:{"text-indent":"-10000px"}});
+    var theSearchType = $("input[@name=palette]:first").val();
+    var theAdvancedSearchType = $("input[@name=advancedPalette]:first").val();
+    $('#t0 #ADVANCED ol').accordion({
+        header: 'h3',
+        active: "#" + theAdvancedSearchType
+    });
+    $('#t0 .tn ul').tabs({
+        navClass: 'g3',
+        panelClass: 'g1',
+        hideClass: 'g2',
+        selectedClass: 'g4',
+        disabledClass:'g5',
+        show: function(event, ui) {
+            $("input[@name=palette]:first").val($(ui.tab).attr('href').substring(1));
+            var normalHeight = 275;
+            var expandedHeight = 481;
+
+            if ($(ui.tab).attr('href') == '#ADVANCED') {
+                top.mainFrame.setFrameDimensions('topFrame', -1, expandedHeight);
+            } else if (top.banner.getHeight() != normalHeight) {
+                top.mainFrame.setFrameDimensions('topFrame', -1, normalHeight);
+            }
+        }
+    });
+    $("#t0 #ADVANCED ol").bind("accordionchange", function(event, ui) {
+        $("input[@name=advancedPalette]:first").val($(ui.newHeader).attr('id'));
+    });
+    if (theSearchType == "ADVANCED") $("#t0 .tn ul").tabs("select", '#ADVANCED');
+
+    //Enable postback when elements change
+    $(".needsPostback").change(function() {
+        UpdateForm();
+    });
+
+    //Bind all submit buttons
+   $("button[@name=basic_submit]").click(function() {
+        var searchType = $("input[@name=palette]:first").val();
+        var advancedSearchType = $("input[@name=advancedPalette]:first").val();
+        var frame = "leftFrame";
+        if (searchType == "BASIC") {
+        } else if (searchType == "ADVANCED" && advancedSearchType == "ADVANCE_STAGE1") {
+            var searchFor = $("input[@name=stage1_searchFor]:checked").val();
+            var locFreeText = $("input[@name=stage1_locFreeText]:first").val();
+            if (locFreeText != "") {
+            } else if (searchFor == "persons") {
+            } else {
+
+            }
+        } else if (searchType == "ADVANCED" && advancedSearchType == "ADVANCE_STAGE2") {
+            var searchFor = $("input[@name=stage2_searchFor]:checked").val();
+            var locFreeText = $("input[@name=stage2_locFreeText]:first").val();
+            if (locFreeText != "") {
+
+            } else if (searchFor == "persons") {
+
+            } else {
+
+            }
+        }
+        DoSearch(frame);
+    });
+
+    //Bind all reset buttons
+    $("button[@name=basic_reset]").click(function() {
+        ResetAll();
+    });
+    AddTips();
+
+    /* PV
+
+     This needs rewriting a little bit for usability.  Will change it to fade out the search pane
+     rather than remove it, and allow clicking anywhere on the search pane to restore the
+     panel again.
+
+     Also, the button text should toggle between 'Hide Search' and 'Reveal Search' or similar.
+
+     */
+
+/* JB I think this is only used in the old query form to toggle between #ADVANCED and @BASIC and is no longer needed
+
+    $(".toggle").click(function() {
+        var normalHeight = 275;
+        var expandedHeight = 481;
+        if ($(this).hasClass("toggledOff")) {
+            $(this).removeClass("toggledOff");
+            $(this).parents("li").siblings().show();
+            top.mainFrame.setFrameDimensions('topFrame', -1, expandedHeight);
+        } else {
+            $(this).addClass("toggledOff");
+            $(this).parents("li").siblings().hide();
+            top.mainFrame.setFrameDimensions('topFrame', -1, normalHeight);
+        }
+
+    });
+*/
+
+    //Bind Load link
+    $('#loadSearchForm').jqm({trigger: 'li.ix li.i2 a'});
+
+    //Bind Save link
+    $("li.ix li.i3 a").click(function(e) {
+        DownloadSearch();
+        e.stopPropagation();
+        return false;
+    })
+
+    BindDateType();
+    BindSearchByIDForm();
+});
+
+
+//Following function extracts search tips from XML file and adds an icon next to
+//search criteria (each form elements) to provide additional help
+function AddTips() {
+    $.get("search_tips.xml", function(data) {
+        $("tip", data).each(function() {
+            var labelID = $(this).attr("id");
+            //alert("ID = " + labelID);
+            var tipText = $(this).attr("text");
+            //alert("Tip text = " + tipText);
+            //Now add the tip to the form if the tip is not empty
+            if (tipText != "") {
+                var tipHtml = "<b class=\"g5\" title=\"|" + tipText + "\"></b>";
+                $("label#" + labelID).append(tipHtml);
+            }
+        });
+        $(".g5").cluetip({hoverIntent: true,
+            cursor: 'pointer',
+            width: 220,
+            dropShadow: false,
+            showTitle: false,
+            activation: 'click',
+            closePosition: 'top',
+            sticky: true,
+            splitTitle: '|'});
+    })
+}
+
+//Following function binds the submit button on the basic search for searching by id
+function BindSearchByIDForm() {
+    $("#SearchByIDSubmit").click(function() {
+        DoByIDSearch();
+    });
+}
+
+//Following function will make sure date type 'career span' is selected where someone switches to search for persons
+//and it changes the date type to event dates when the user switches to search for events.
+//if the date type is changed after choosing to search for event or persons then there will be no automatic changing of values
+function BindDateType() {
+    $("input[@name=stage1_searchFor]").click(function() {
+        var aVal = $("input[@name=stage1_searchFor]:checked").val();
+        if (aVal == "persons") {
+            $("input[@name=stage1_dateType][@value=careerSpan]").attr("checked", "checked");
+            $("input[@name=stage1_dateType][@value=eventsDate]").removeAttr("checked");
+        } else {
+            $("input[@name=stage1_dateType][@value=careerSpan]").removeAttr("checked");
+            $("input[@name=stage1_dateType][@value=eventsDate]").attr("checked", "checked");
+        }
+    });
+    $("input[@name=stage2_searchFor]").click(function() {
+        var aVal = $("input[@name=stage2_searchFor]:checked").val();
+        if (aVal == "persons") {
+            $("input[@name=stage2_dateType][@value=careerSpan]").attr("checked", "checked");
+            $("input[@name=stage2_dateType][@value=eventsDate]").removeAttr("checked");
+        } else {
+            $("input[@name=stage2_dateType][@value=careerSpan]").removeAttr("checked");
+            $("input[@name=stage2_dateType][@value=eventsDate]").attr("checked", "checked");
+        }
+    });
+}
+
+function UpdateParentFrameSize() {
+    $(document).resize(function() {
+        if ($("#formBody").css("display") == "none") {
+            parent.document.body.rows = "87,*";
+        } else {
+            var size = $(document).find("#bs:first").height() + 97;
+            parent.document.body.rows = size + ",*";
+        }
+    });
+}
+
+function ResetFrames() {
+	/* JB
+    parent.frames[1].document.location.href = "search.html";
+    parent.frames[3].document.location.href = "text.html";
+	*/
+}
+function ResetAll() {
+	/* JB
+    var frm = this.document.forms['basic_search'];
+    frm.action = "reset.jsp";
+    frm.target = "topFrame";
+    frm.submit();
+    ResetFrames();
+	*/
+}
+function DoByIDSearch() {
+    var PersonIDStr = $("#PersonID").val();
+    ResetFrames();
+    if (PersonIDStr == "") {
+        alert("Please enter a valid ID in the textbox.");
+        return;
+    }
+    var frm = this.document.forms['basic_search'];
+    frm.action = "../persons/DisplayPerson.jsp?PersonID=" + PersonIDStr;
+    frm.target = "displayFrame";
+    frm.submit();
+}
+function DoSearch(FrameName) {
+    /* JB
+	ResetFrames();
+    var frm = this.document.forms['basic_search'];
+    frm.action = "update.jsp";
+    frm.target = "topFrame";
+    frm.submit();
+    frm.action = "search.jsp";
+    frm.target = FrameName;
+    frm.hasBeenSubmitted.value = "yes";
+    frm.submit();
+	*/
+}
+function UpdateForm() {
+	/* JB
+    var frm = this.document.forms['basic_search'];
+    frm.action = "update.jsp";
+    frm.target = "topFrame";
+    frm.submit();
+	*/
+}
+function DownloadSearch() {
+	/*
+    var frm = this.document.forms['basic_search'];
+    frm.action = "downloadSearchState.jsp";
+    frm.target = "displayFrame";
+    frm.submit();
+	*/
+}

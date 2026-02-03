@@ -1,0 +1,35 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+        <link rel="stylesheet" type="text/css" href="../Assets/p/c/global.css"/>
+        <!--[if IE 7]><link rel="stylesheet" type="text/css" href="../Assets/p/c/msie_7.css"/><![endif]-->
+        <script src="../Assets/p/s/jquery-1.2.6.min.js" type="text/javascript"></script>
+        <script src="../Assets/p/s/jq.validate.min.js" type="text/javascript"></script>
+        <script src="../Assets/p/s/jq.overlabel.min.js" type="text/javascript"></script>
+        <script src="../Assets/p/s/config.global.js" type="text/javascript"></script>
+        <script src="../Assets/p/s/config.t3.js" type="text/javascript"></script>
+    	<script type="text/javascript" src="data/persons.js"></script>
+    	<script type="text/javascript" src="search.js"></script>
+        <title>CCED: Search</title>
+    </head>
+    <body id="t3">
+    <div class="ut ut1">
+    <form>
+        <h3>Retrieve Record:</h3>
+        <fieldset>
+            <legend>Retrieve Record:</legend>
+            <label for="PersonID">Person ID</label>
+            <input type="text" id="PersonID" name="PersonID"/>
+            <button type="button" onclick="processIdDisplay('PersonID')">Go</button>
+        </fieldset>
+    </form>
+</div>
+        <div class="ph">
+    <h1>Search</h1></div>
+<div class="ct">
+    <p>To search the evidence records in the Database, construct your query in the frame above. You should fill in one or more fields as appropriate. Once you have executed the query, a list of career model records will appear in the frame on the left hand side of the screen. Select a reference from this list to make information about a person show up here.</p>
+</div>  
+    </body>
+</html>

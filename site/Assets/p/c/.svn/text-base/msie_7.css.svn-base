@@ -1,0 +1,23 @@
+#t0 .m .w .u2 {padding-bottom:11px}
+#t0 li {vertical-align:top}
+
+#t0 #ADVANCED li h3 {padding: 4px 5px 6px 5px !important; }
+
+#t0 #BASIC fieldset ol li:first-child {width: 28.5em}
+#t0 #BASIC fieldset ol ol li:first-child{width:auto}
+#t0 #ADVANCED  h3 {min-width:47.5em}
+#t0 #ADVANCED fieldset li {min-width: 33.8em !important;}
+#t0 #ADVANCED fieldset li.ix {padding: 0 !important;}
+#t0 #ADVANCED fieldset .ff3 {margin: -1px 0 0 0 !important;}
+
+#t0 #ADVANCED li.ix ol li  {padding-top: 0 !important;}
+#t0 #ADVANCED li.ix ol li a {margin-top: 5px !important; float:left; line-height: 1.15em}
+
+
+#t0 ol li label {padding-bottom: 2px !important; }
+
+#t0 .g5{display:inline-block; }
+
+#t0 ul.ln li a {padding:5px 10px 8px 0;}
+
+.u3 h3 {clear: both;}
