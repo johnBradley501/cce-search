@@ -35,13 +35,13 @@ locationPersons2json.doTheWork(dbConnection)
 # this creates file countyPers.js which lists person IDs of persons associated with each county
 countyPersons2json.doTheWork(dbConnection)
 
-# these two create archdeaconry data:
+# these two create Archdeaconry data:
 # * the first creates archDData.js: contains the names of the Archdeaconries
-# * the second creates archDPers.js: contains arrays of person IDs associated with each archdeaconry
+# * the second creates archDPers.js: contains arrays of person IDs associated with each Archdeaconry
 archdData2json.doTheWork(dbConnection)
 archdPersons2json.doTheWork(dbConnection)
 
-# these two create CCE Regiony data:
+# these two create CCE Region data:
 # * the first creates regData.js: contains the names of the CCE regions
 # * the second creates regPers.js: contains arrays of person IDs associated with each Region
 regData2json.doTheWork(dbConnection)
@@ -53,13 +53,13 @@ dioceseOrd2json.doTheWork(dbConnection)
 # this creates file eventsPersons.js which lists persons associated with each CM event type
 eventsPersons2json.doTheWork(dbConnection)
 
-# these two create files containing data about persons and CM event data
+# these two create files containing data about persons and CM event data:
 # * the first creates file appEventData.js: contains filtering data for appointment records
-# * the second creates file ordEventData.js: contains filtering data for ortination records
+# * the second creates file ordEventData.js: contains filtering data for ordination records
 appEventData2json.doTheWork(dbConnection)
 ordEventData2json.doTheWork(dbConnection)
 
-# this creates lists of items to be used to display fixed dropdowns (that are always the same):
+# this creates lists of items to be used to display fixed dropdowns in the advanced search menu (that are always the same):
 #     they are Offices, Clerical status, Patronage Type and Patron Gender
 fixedLists2json.doTheWork(dbConnection)
 
