@@ -8,8 +8,8 @@ from the original MySQL database, and then drew on this JSON data via JavaScript
 
 All the code for this is contained here in this repo.
 * The directory "src" contains Python code that creates the JSON data by running SQL queries against the database and turning it into JSON. See more
-about this [here](doc/srcOverfiew.md).
+about this [here](doc/srcOverview.md).
 * The directory "site" contains the search folder which contains the web pages that implement the service: HTML and JavaScript files. It is meant to be
-incorporated into the static web pages that present the rest of the CCEd's web site.
+incorporated into the static web pages that present the rest of the CCEd's static web site. See more about this [here](doc/siteOverview.md).
 
 -- John Bradley (john.bradley@kcl.ac.uk) (February 2026)
