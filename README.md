@@ -6,6 +6,9 @@ When the website was changed to a static site (made up only of HTML, images, CCS
 access for the data was no longer available.  To replace this, a set of pages were created that exploited data stored as JSON and generated
 from the original MySQL database, and then drew on this JSON data via JavaScript code. This repo is the project by which these pages were made.
 
+In operation it looks like this:
+![CCE-Search in operation](https://github.com/johnBradley501/cce-search/blob/main/doc/cce.png)
+
 All the code for this is contained here in this repo.
 * The directory "src" contains Python code that creates the JSON data by running SQL queries against the database and turning it into JSON. See more
 about this [here](doc/srcOverview.md).
