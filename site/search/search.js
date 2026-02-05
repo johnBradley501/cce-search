@@ -1,5 +1,5 @@
 /* The following functions are used to provide reusable access to JSON data stored in the data folder.
-   For them to work, the appropriate file has to be laoded (via a <script tag elsewhere. */
+   For them to work, the appropriate file has to be loaded (via a <script tag elsewhere. */
 function getThePersons(){
 	if(window.persons == undefined){
 		window.persons = getPersons();
@@ -29,7 +29,7 @@ function getLocationPersonsData(){
 	return window.locationpersons;
 }
 
-/* Converts a person Key into a URL for that person's page.  All the code here uses this function to convert
+/* Converts a person ID/Key into a URL for that person's page.  All the code here uses this function to convert
  * a person key into a URL.  Change it here to indicate where person pages are. 
 */
 function makePersonURL(pid){

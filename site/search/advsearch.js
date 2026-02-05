@@ -102,6 +102,10 @@ async function getTheAppointmentEventData(){
 	return window.appEvent;	
 }
 
+/* ======================= Functions to support advanced query form dynamic elements ===================>
+
+
+
 function setDisabled(ele, val){
 	if(val)ele.setAttribute("disabled", "disabled");
 	else ele.removeAttribute("disabled");
@@ -156,23 +160,6 @@ function handleJurisGeogDioceseDisabling(){
 	}
 }
 
-/* function setEventOption(eid, optlist){
-	dd = document.getElementById(eid);
-	if(dd.options.length == 1){
-		if(optlist.length == 0)return;
-		options = '<option value="">-</option>';
-		for(const itm of optlist){
-			options = options+`<option value="${itm[0]}">${itm[1]}</option>\n`
-		}
-		dd.innerHTML = options;
-		setDisabled(dd, false);
-	} else {
-		if(optlist.length > 0)return; // assumes current list is same as proposed one   JB
-		options = '<option value="">-</option>';
-		dd.innerHTML = options;
-		setDisabled(dd, true);
-	}
-} */
 function setEventOption(eid, optlist){
 	dd = document.getElementById(eid);
 	if(optlist.length > 1){
@@ -287,6 +274,9 @@ function handleAdvancedSearchQuery(fid){
 	target = window.open(theURL, "leftFrame")
 	return false;
 }
+
+/* ======================= Functions to support query processing for top form (advdisp.html) =================== */
+
 
 async function processAdvancedSearch(theData) {
 	if(theData) {

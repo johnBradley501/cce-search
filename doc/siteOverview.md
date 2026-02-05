@@ -48,3 +48,5 @@ and was unncessary.  Although it is still in this directory, it is no longer use
 
 Finally, `/site/search` contains a subfolder `data`, which contains all the JSON/JS data which powers the basic and advanced search mechanisms.  These
 are the files generated with the python code in `/src` in this project.
+
+A brief overview of how the JavaScript files work to support searching can be found [here](jsOverview.md).
