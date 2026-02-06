@@ -102,7 +102,7 @@ async function getTheAppointmentEventData(){
 	return window.appEvent;	
 }
 
-/* ======================= Functions to support advanced query form dynamic elements ===================>
+/* ======================= Functions to support advanced query form dynamic elements ===================> */
 
 
 
