@@ -277,6 +277,9 @@ function displaySearch(rslts){
 	ele.innerHTML = "<ul>\n"+rsltStr+"\n</ul>";
 }
 
+/* ======================= Code to support the help buttons in the form (borrowed from the old server-based codebase) =================== */
+
+
 //Following function extracts search tips from XML file and adds an icon next to
 //search criteria (each form elements) to provide additional help
 // copied from config.t0.js which is no longer invoked.    JB
